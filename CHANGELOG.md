@@ -8,6 +8,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ## [1.0.0] - 2025-01-09
 
 ### ✨ Adicionado
+
 - Tutorial completo de configuração de Virtual Hosts no XAMPP
 - Configurações seguras para ambiente de produção
 - Scripts de automação avançados:
@@ -25,6 +26,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Licença MIT para uso livre
 
 ### 🔒 Segurança
+
 - Configurações inseguras claramente identificadas
 - Arquivo separado com configurações seguras para produção
 - Avisos destacados sobre uso apenas em desenvolvimento
@@ -32,6 +34,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Configurações específicas por framework (Laravel, WordPress)
 
 ### 🔧 Melhorias
+
 - Validação robusta de entrada nos scripts
 - Rollback automático em caso de erro
 - Timestamp compatível com diferentes localizações
@@ -40,6 +43,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Suporte a portas personalizadas
 
 ### 📚 Documentação
+
 - README.md completo e profissional
 - Guia de contribuição detalhado
 - Exemplos práticos para diferentes tipos de projeto
@@ -48,6 +52,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Alternativas modernas documentadas
 
 ### 🚀 Funcionalidades Avançadas
+
 - Sistema de rollback com validação
 - Listagem detalhada de Virtual Hosts
 - Validação de configuração do Apache
@@ -56,12 +61,14 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Verificação de pré-requisitos
 
 ### 🐳 Alternativas Modernas
+
 - Exemplos Docker para desenvolvimento
 - Laravel Valet para Windows
 - WAMP Server como alternativa
 - Ferramentas modernas (Lando, DDEV, Laravel Sail)
 
 ### 📊 Escalabilidade
+
 - Documentação sobre limitações do XAMPP
 - Recomendações para múltiplos Virtual Hosts
 - Otimizações para ambiente de produção
@@ -70,6 +77,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ## [0.1.0] - 2025-01-09
 
 ### ✨ Adicionado
+
 - Versão inicial do tutorial
 - Configurações básicas de Virtual Hosts
 - Exemplos simples de configuração
@@ -90,7 +98,9 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ## 📝 Notas de Versão
 
 ### v1.0.0
+
 Esta é a primeira versão estável do tutorial, incluindo todas as funcionalidades principais:
+
 - Tutorial completo e seguro
 - Scripts de automação avançados
 - Configurações seguras para produção
@@ -98,6 +108,7 @@ Esta é a primeira versão estável do tutorial, incluindo todas as funcionalida
 - Considerações de escalabilidade
 
 ### Próximas Versões
+
 - v1.1.0: Scripts cross-platform (PowerShell, Python)
 - v1.2.0: Interface gráfica para usuários iniciantes
 - v2.0.0: Ferramenta standalone com instalador
