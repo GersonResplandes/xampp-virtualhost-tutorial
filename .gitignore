@@ -1,0 +1,42 @@
+# XAMPP Virtual Host Tutorial - .gitignore
+
+# Arquivos temporários do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Arquivos de log
+*.log
+
+# Arquivos de backup
+*.bak
+*.backup
+*.old
+
+# Arquivos de configuração local (se houver)
+config.local.*
+.env.local
+
+# Arquivos do editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos do sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Arquivos de teste
+test/
+tests/
+*.test.*
+
+# Documentação temporária
+docs/temp/
+*.tmp

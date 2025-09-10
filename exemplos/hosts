@@ -1,0 +1,80 @@
+# Arquivo hosts do Windows
+
+# Este arquivo contém exemplos de entradas para o arquivo hosts
+
+#
+
+# Para usar este arquivo:
+
+# 1. Abra o Bloco de Notas como administrador
+
+# 2. Abra o arquivo: C:\Windows\System32\drivers\etc\hosts
+
+# 3. Adicione as linhas desejadas no final do arquivo
+
+# 4. Salve o arquivo (sem extensão .txt)
+
+# ===========================================
+
+# EXEMPLOS DE CONFIGURAÇÃO
+
+# ===========================================
+
+# Projeto PHP básico
+
+127.0.0.1 projetoPHP.local
+
+# Projeto Laravel
+
+127.0.0.1 laravel.local
+
+# Projeto WordPress
+
+127.0.0.1 wordpress.local
+
+# Múltiplos projetos
+
+127.0.0.1 projeto1.local
+127.0.0.1 projeto2.local
+
+# Projeto com porta personalizada
+
+127.0.0.1 projeto8080.local
+
+# ===========================================
+
+# DICAS IMPORTANTES:
+
+# ===========================================
+
+#
+
+# 1. Sempre use 127.0.0.1 (localhost)
+
+# 2. Use nomes descritivos para seus projetos
+
+# 3. Termine sempre com .local
+
+# 4. Não adicione espaços extras
+
+# 5. Uma entrada por linha
+
+#
+
+# ===========================================
+
+# EXEMPLO DE USO:
+
+# ===========================================
+
+#
+
+# Se você configurou um VirtualHost com ServerName "meuprojeto.local",
+
+# adicione esta linha no arquivo hosts:
+
+# 127.0.0.1 meuprojeto.local
+
+#
+
+# Depois acesse no navegador: http://meuprojeto.local/
