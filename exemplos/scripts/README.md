@@ -5,32 +5,39 @@ Esta pasta contém scripts para automatizar a criação e gerenciamento de Virtu
 ## 📋 Scripts Disponíveis
 
 ### 🚀 `criar-virtualhost.bat`
+
 Cria um novo Virtual Host automaticamente (versão básica).
 
 **Uso:**
+
 ```bash
 criar-virtualhost.bat nome-do-projeto "caminho-do-projeto"
 ```
 
 **Exemplo:**
+
 ```bash
 criar-virtualhost.bat meuprojeto "C:\Users\Usuario\Projetos\meuprojeto"
 ```
 
 ### 🚀 `criar-virtualhost-avancado.bat`
+
 Cria um novo Virtual Host com validação robusta e rollback automático.
 
 **Uso:**
+
 ```bash
 criar-virtualhost-avancado.bat nome-do-projeto "caminho-do-projeto" [porta]
 ```
 
 **Exemplo:**
+
 ```bash
 criar-virtualhost-avancado.bat meuprojeto "C:\Users\Usuario\Projetos\meuprojeto" 8080
 ```
 
 **Funcionalidades Avançadas:**
+
 - ✅ Validação robusta de entrada
 - ✅ Verificação de duplicatas
 - ✅ Rollback automático em caso de erro
@@ -39,14 +46,17 @@ criar-virtualhost-avancado.bat meuprojeto "C:\Users\Usuario\Projetos\meuprojeto"
 - ✅ Timestamp compatível com diferentes localizações
 
 ### 🔍 `validar-configuracao.bat`
+
 Valida a configuração atual de Virtual Hosts.
 
 **Uso:**
+
 ```bash
 validar-configuracao.bat
 ```
 
 **Funcionalidades:**
+
 - ✅ Verifica se o XAMPP está instalado
 - ✅ Testa configuração do Apache
 - ✅ Verifica se o Apache está rodando
@@ -56,14 +66,17 @@ validar-configuracao.bat
 - ✅ Mostra logs de erro
 
 ### 📋 `listar-virtualhosts.bat`
+
 Lista todos os Virtual Hosts configurados com informações detalhadas.
 
 **Uso:**
+
 ```bash
 listar-virtualhosts.bat
 ```
 
 **Funcionalidades:**
+
 - ✅ Lista todos os Virtual Hosts
 - ✅ Mostra caminhos e portas
 - ✅ Verifica status dos diretórios
@@ -72,19 +85,23 @@ listar-virtualhosts.bat
 - ✅ Lista entradas do arquivo hosts
 
 ### 🗑️ `remover-virtualhost.bat`
+
 Remove um Virtual Host existente.
 
 **Uso:**
+
 ```bash
 remover-virtualhost.bat nome-do-projeto
 ```
 
 **Exemplo:**
+
 ```bash
 remover-virtualhost.bat meuprojeto
 ```
 
 **Funcionalidades:**
+
 - ✅ Remove configuração do `httpd-vhosts.conf`
 - ✅ Remove entrada do arquivo `hosts`
 - ✅ Faz backup automático dos arquivos
@@ -92,15 +109,18 @@ remover-virtualhost.bat meuprojeto
 - ✅ Limpa cache DNS
 
 ### 🔄 `rollback.bat`
+
 Faz rollback para uma configuração anterior.
 
 **Uso:**
+
 ```bash
 rollback.bat [timestamp]
 rollback.bat list
 ```
 
 **Exemplos:**
+
 ```bash
 # Listar backups disponíveis
 rollback.bat list
@@ -110,6 +130,7 @@ rollback.bat 20250109_143022
 ```
 
 **Funcionalidades:**
+
 - ✅ Lista backups disponíveis
 - ✅ Restaura configuração anterior
 - ✅ Valida configuração após rollback
@@ -137,6 +158,7 @@ rollback.bat 20250109_143022
 3. **Execute o script desejado**
 
 **Exemplo completo:**
+
 ```bash
 # Abrir CMD como administrador
 # Navegar até a pasta
@@ -162,33 +184,40 @@ rollback.bat 20250109_143022
 ## 🐛 Solução de Problemas
 
 ### Erro: "Acesso negado"
+
 - Execute o CMD como administrador
 - Verifique se o antivírus não está bloqueando
 
 ### Erro: "XAMPP não encontrado"
+
 - Verifique se o XAMPP está instalado em `C:\xampp\`
 - Reinstale o XAMPP se necessário
 
 ### Erro: "Configuração inválida"
+
 - Verifique os logs do Apache
 - Use o script de validação para diagnosticar
 - Use o rollback para reverter mudanças
 
 ### Erro: "Nome do projeto inválido"
+
 - Use apenas letras, números, hífens e underscores
 - Evite caracteres especiais e espaços
 
 ### Erro: "Porta em uso"
+
 - Verifique se a porta está sendo usada por outro serviço
 - Use `netstat -an | findstr :porta` para verificar
 
 ## 📝 Logs e Backups
 
 Os scripts criam backups automáticos com timestamp:
+
 - `httpd-vhosts.conf.backup.YYYYMMDD_HHMMSS`
 - `hosts.backup.YYYYMMDD_HHMMSS`
 
 ### Estrutura de Logs
+
 - **Log de criação**: `vhost_creation.log` na pasta do projeto
 - **Logs do Apache**: `C:\xampp\apache\logs\error.log`
 - **Backups**: Pasta de configuração do XAMPP
@@ -196,6 +225,7 @@ Os scripts criam backups automáticos com timestamp:
 ## 🔄 Sistema de Rollback
 
 O sistema de rollback permite reverter mudanças:
+
 1. **Listar backups**: `rollback.bat list`
 2. **Fazer rollback**: `rollback.bat timestamp`
 3. **Validação automática**: Configuração é validada após rollback
@@ -204,6 +234,7 @@ O sistema de rollback permite reverter mudanças:
 ## 🚀 Funcionalidades Avançadas
 
 ### Validação Robusta
+
 - ✅ Formato de caminho
 - ✅ Caracteres especiais
 - ✅ Portas válidas
@@ -211,12 +242,14 @@ O sistema de rollback permite reverter mudanças:
 - ✅ Pré-requisitos
 
 ### Rollback Automático
+
 - ✅ Em caso de erro de configuração
 - ✅ Backup da configuração atual
 - ✅ Validação após rollback
 - ✅ Restauração automática
 
 ### Logging Completo
+
 - ✅ Log de criação
 - ✅ Timestamp de operações
 - ✅ Status de validação
@@ -225,6 +258,7 @@ O sistema de rollback permite reverter mudanças:
 ## 🤝 Contribuindo
 
 Para melhorar os scripts:
+
 1. Teste em diferentes versões do Windows
 2. Adicione validações adicionais
 3. Melhore as mensagens de erro
@@ -234,12 +268,14 @@ Para melhorar os scripts:
 ## 📊 Considerações de Escalabilidade
 
 ### Múltiplos Virtual Hosts
+
 - ✅ Scripts suportam múltiplos Virtual Hosts
 - ✅ Validação de duplicatas
 - ✅ Listagem organizada
 - ⚠️ Performance pode ser afetada com 50+ Virtual Hosts
 
 ### Recomendações
+
 - Use scripts avançados para projetos críticos
 - Faça rollback regularmente
 - Monitore logs do Apache

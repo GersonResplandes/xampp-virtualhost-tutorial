@@ -1,7 +1,7 @@
 # 🚀 XAMPP Virtual Host Setup (Windows)
 
-[![GitHub stars](https://img.shields.io/github/stars/seu-usuario/xampp-virtualhost-tutorial?style=social)](https://github.com/seu-usuario/xampp-virtualhost-tutorial)
-[![GitHub forks](https://img.shields.io/github/forks/seu-usuario/xampp-virtualhost-tutorial?style=social)](https://github.com/seu-usuario/xampp-virtualhost-tutorial)
+[![GitHub stars](https://img.shields.io/github/stars/GersonResplandes/xampp-virtualhost-tutorial?style=social)](https://github.com/GersonResplandes/xampp-virtualhost-tutorial)
+[![GitHub forks](https://img.shields.io/github/forks/GersonResplandes/xampp-virtualhost-tutorial?style=social)](https://github.com/GersonResplandes/xampp-virtualhost-tutorial)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Aprenda a configurar Virtual Hosts no XAMPP para rodar seus projetos PHP em qualquer pasta do seu computador, sem depender do `htdocs`.**
@@ -13,7 +13,10 @@
 - [📋 Pré-requisitos](#-pré-requisitos)
 - [🚀 Configuração Passo a Passo](#-configuração-passo-a-passo)
 - [📂 Exemplos](#-exemplos)
-- [❓ Problemas Comuns](#-problemas-comuns)
+- [🔒 Segurança e Configurações](#-segurança-e-configurações)
+- [❓ Problemas Comuns e Troubleshooting](#-problemas-comuns-e-troubleshooting)
+- [🚀 Alternativas Modernas](#-alternativas-modernas)
+- [📊 Considerações de Escalabilidade](#-considerações-de-escalabilidade)
 - [🤝 Contribuindo](#-contribuindo)
 - [📄 Licença](#-licença)
 
@@ -36,10 +39,12 @@ Este repositório ensina como configurar **Virtual Hosts no XAMPP** para Windows
 - 🖥️ **Acesso rápido** aos projetos via URLs personalizadas
 - ⚙️ **Arquivos de exemplo** prontos para uso (desenvolvimento e produção)
 - 🔒 **Configurações seguras** para ambiente de produção
-- 📝 **Tutorial detalhado** com screenshots e explicações
-- 🔧 **Solução de problemas** comuns e troubleshooting avançado
+- 🔧 **Scripts de automação** avançados com validação e rollback
+- 📝 **Tutorial detalhado** com troubleshooting avançado
 - 🎨 **Interface moderna** e fácil de seguir
 - 🚀 **Alternativas modernas** (Docker, Laravel Valet, etc.)
+- 📊 **Considerações de escalabilidade** para múltiplos projetos
+- 🛡️ **Sistema de backup** automático com rollback
 
 ## 📋 Pré-requisitos
 
@@ -121,7 +126,13 @@ Este repositório inclui arquivos de exemplo na pasta `exemplos/`:
 - 📄 `httpd-vhosts.conf` - Exemplo de configuração do Apache (DESENVOLVIMENTO)
 - 📄 `httpd-vhosts-seguro.conf` - Configurações seguras para PRODUÇÃO
 - 📄 `hosts` - Exemplo de configuração do arquivo hosts
-- 🔧 `scripts/` - Scripts de automação e validação
+- 🔧 `scripts/` - Scripts de automação avançados:
+  - 🚀 `criar-virtualhost.bat` - Criação básica
+  - 🚀 `criar-virtualhost-avancado.bat` - Criação com validação robusta
+  - 📋 `listar-virtualhosts.bat` - Listagem detalhada
+  - 🗑️ `remover-virtualhost.bat` - Remoção segura
+  - 🔄 `rollback.bat` - Sistema de rollback
+  - 🔍 `validar-configuracao.bat` - Validação completa
 
 ### 🔧 Personalizando para seu projeto
 
@@ -346,11 +357,13 @@ Para desenvolvimento moderno:
 ### 🚀 Múltiplos Virtual Hosts
 
 **Limitações do XAMPP:**
+
 - ⚠️ Performance pode ser afetada com 50+ Virtual Hosts
 - ⚠️ Arquivo `httpd-vhosts.conf` pode ficar muito grande
 - ⚠️ Tempo de inicialização do Apache pode aumentar
 
 **Recomendações:**
+
 - ✅ Use scripts avançados para gerenciar múltiplos projetos
 - ✅ Monitore logs do Apache regularmente
 - ✅ Considere alternativas modernas para projetos complexos
@@ -359,6 +372,7 @@ Para desenvolvimento moderno:
 ### 🔧 Otimizações para Produção
 
 **Para ambientes com muitos Virtual Hosts:**
+
 ```apache
 # Use configurações otimizadas
 <VirtualHost *:80>
@@ -376,6 +390,7 @@ Para desenvolvimento moderno:
 ### 🐳 Alternativas para Escalabilidade
 
 **Docker (Recomendado para múltiplos projetos):**
+
 ```yaml
 # docker-compose.yml
 version: "3.8"
@@ -395,6 +410,7 @@ services:
 ```
 
 **Vantagens do Docker:**
+
 - ✅ Isolamento completo entre projetos
 - ✅ Escalabilidade horizontal
 - ✅ Configuração reproduzível
@@ -420,6 +436,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **⭐ Se este tutorial te ajudou, considere dar uma estrela no repositório! ⭐**
 
-Feito com 💙 por [Seu Nome](https://github.com/GersonResplandes)
+Feito por [Gerson Resplandes](https://github.com/GersonResplandes)
 
 </div>

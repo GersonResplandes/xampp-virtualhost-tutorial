@@ -40,3 +40,39 @@ tests/
 # Documentação temporária
 docs/temp/
 *.tmp
+
+# Arquivos específicos do XAMPP
+xampp/
+htdocs/
+apache/
+mysql/
+
+# Backups de Virtual Hosts
+httpd-vhosts.conf.backup.*
+hosts.backup.*
+
+# Logs de criação de Virtual Hosts
+vhost_creation.log
+
+# Arquivos temporários dos scripts
+vhost_config_*.tmp
+
+# Arquivos de configuração pessoal
+*.local
+*.dev
+
+# Arquivos de projeto de exemplo
+exemplos/projetos/
+exemplos/temp/
+
+# Arquivos de build
+build/
+dist/
+*.exe
+*.msi
+
+# Arquivos de dependências
+node_modules/
+vendor/
+composer.lock
+package-lock.json

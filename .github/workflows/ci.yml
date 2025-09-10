@@ -1,0 +1,149 @@
+name: 🚀 CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Validate README
+      run: |
+        echo "Validating README.md structure..."
+        if (!(Test-Path "README.md")) {
+          Write-Error "README.md not found"
+          exit 1
+        }
+        
+        $content = Get-Content "README.md" -Raw
+        if ($content -notmatch "XAMPP Virtual Host Setup") {
+          Write-Error "README.md missing main title"
+          exit 1
+        }
+        
+        echo "✅ README.md validation passed"
+        
+    - name: 🔍 Validate Examples
+      run: |
+        echo "Validating example files..."
+        
+        if (!(Test-Path "exemplos/httpd-vhosts.conf")) {
+          Write-Error "httpd-vhosts.conf not found"
+          exit 1
+        }
+        
+        if (!(Test-Path "exemplos/httpd-vhosts-seguro.conf")) {
+          Write-Error "httpd-vhosts-seguro.conf not found"
+          exit 1
+        }
+        
+        if (!(Test-Path "exemplos/hosts")) {
+          Write-Error "hosts example not found"
+          exit 1
+        }
+        
+        echo "✅ Example files validation passed"
+        
+    - name: 🔍 Validate Scripts
+      run: |
+        echo "Validating script files..."
+        
+        $scripts = @(
+          "exemplos/scripts/criar-virtualhost.bat",
+          "exemplos/scripts/criar-virtualhost-avancado.bat",
+          "exemplos/scripts/listar-virtualhosts.bat",
+          "exemplos/scripts/remover-virtualhost.bat",
+          "exemplos/scripts/rollback.bat",
+          "exemplos/scripts/validar-configuracao.bat"
+        )
+        
+        foreach ($script in $scripts) {
+          if (!(Test-Path $script)) {
+            Write-Error "Script not found: $script"
+            exit 1
+          }
+        }
+        
+        echo "✅ Script files validation passed"
+        
+    - name: 🔍 Validate Documentation
+      run: |
+        echo "Validating documentation files..."
+        
+        $docs = @(
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "CHANGELOG.md",
+          "ROADMAP.md"
+        )
+        
+        foreach ($doc in $docs) {
+          if (!(Test-Path $doc)) {
+            Write-Error "Documentation not found: $doc"
+            exit 1
+          }
+        }
+        
+        echo "✅ Documentation validation passed"
+        
+    - name: 🔍 Check File Structure
+      run: |
+        echo "Checking project structure..."
+        
+        $expectedStructure = @(
+          "README.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "CHANGELOG.md",
+          "ROADMAP.md",
+          ".gitignore",
+          "exemplos/",
+          "exemplos/httpd-vhosts.conf",
+          "exemplos/httpd-vhosts-seguro.conf",
+          "exemplos/hosts",
+          "exemplos/scripts/",
+          "exemplos/scripts/README.md",
+          ".github/",
+          ".github/ISSUE_TEMPLATE/",
+          ".github/workflows/"
+        )
+        
+        foreach ($item in $expectedStructure) {
+          if (!(Test-Path $item)) {
+            Write-Error "Missing required file/folder: $item"
+            exit 1
+          }
+        }
+        
+        echo "✅ Project structure validation passed"
+        
+    - name: 📊 Generate Report
+      run: |
+        echo "📊 Project Statistics:"
+        echo "====================="
+        
+        $files = Get-ChildItem -Recurse -File | Where-Object { $_.Extension -match '\.(md|bat|conf)$' }
+        $totalLines = 0
+        
+        foreach ($file in $files) {
+          $lines = (Get-Content $file.FullName | Measure-Object -Line).Lines
+          $totalLines += $lines
+          echo "📄 $($file.Name): $lines lines"
+        }
+        
+        echo "====================="
+        echo "📈 Total files: $($files.Count)"
+        echo "📈 Total lines: $totalLines"
+        echo "====================="
+        
+    - name: 🎉 Success
+      run: |
+        echo "🎉 All validations passed!"
+        echo "✅ Project is ready for release"

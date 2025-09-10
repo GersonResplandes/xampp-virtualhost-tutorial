@@ -31,7 +31,7 @@ Para sugerir melhorias:
 1. **Fork** o repositório
 2. **Clone** seu fork:
    ```bash
-   git clone https://github.com/GersonResplandes/xampp-virtualhost-tutorial.git
+   git clone https://github.com/seu-usuario/xampp-virtualhost-tutorial.git
    ```
 3. **Crie uma branch** para sua feature:
    ```bash
@@ -69,11 +69,14 @@ Use o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 - Corrigir erros de digitação
 - Traduzir para outros idiomas
 
-### 🛠️ Exemplos
+### 🛠️ Exemplos e Scripts
 
 - Adicionar novos exemplos de configuração
 - Criar templates para diferentes frameworks
 - Adicionar soluções para problemas específicos
+- Melhorar scripts de automação
+- Adicionar validações aos scripts
+- Implementar funcionalidades cross-platform
 
 ### 🎨 Melhorias Visuais
 
@@ -98,6 +101,11 @@ Antes de submeter seu PR, verifique:
 - 🖼️ **Screenshots** e diagramas explicativos
 - 🧪 **Testes** de diferentes configurações
 - 📚 **Documentação** adicional
+- 🔧 **Scripts cross-platform** (PowerShell, Python, etc.)
+- 🐳 **Exemplos Docker** mais avançados
+- 🔒 **Configurações de segurança** específicas por framework
+- 📊 **Monitoramento** e métricas de performance
+- 🚀 **Interface gráfica** para usuários iniciantes
 
 ## 💬 Comunicação
 
