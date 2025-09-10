@@ -341,6 +341,65 @@ Para desenvolvimento moderno:
 - **Lando**: Ferramenta de desenvolvimento local
 - **DDEV**: Ambiente de desenvolvimento containerizado
 
+## 📊 Considerações de Escalabilidade
+
+### 🚀 Múltiplos Virtual Hosts
+
+**Limitações do XAMPP:**
+- ⚠️ Performance pode ser afetada com 50+ Virtual Hosts
+- ⚠️ Arquivo `httpd-vhosts.conf` pode ficar muito grande
+- ⚠️ Tempo de inicialização do Apache pode aumentar
+
+**Recomendações:**
+- ✅ Use scripts avançados para gerenciar múltiplos projetos
+- ✅ Monitore logs do Apache regularmente
+- ✅ Considere alternativas modernas para projetos complexos
+- ✅ Faça backup regular das configurações
+
+### 🔧 Otimizações para Produção
+
+**Para ambientes com muitos Virtual Hosts:**
+```apache
+# Use configurações otimizadas
+<VirtualHost *:80>
+    ServerName projeto.local
+    DocumentRoot "C:/caminho/projeto"
+    <Directory "C:/caminho/projeto">
+        # Configurações mínimas para performance
+        Options -Indexes -ExecCGI
+        AllowOverride None
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+### 🐳 Alternativas para Escalabilidade
+
+**Docker (Recomendado para múltiplos projetos):**
+```yaml
+# docker-compose.yml
+version: "3.8"
+services:
+  projeto1:
+    build: ./projeto1
+    ports:
+      - "8080:80"
+  projeto2:
+    build: ./projeto2
+    ports:
+      - "8081:80"
+  projeto3:
+    build: ./projeto3
+    ports:
+      - "8082:80"
+```
+
+**Vantagens do Docker:**
+- ✅ Isolamento completo entre projetos
+- ✅ Escalabilidade horizontal
+- ✅ Configuração reproduzível
+- ✅ Sem conflitos de versão
+
 ## 🤝 Contribuindo
 
 Contribuições são sempre bem-vindas! Se você tem sugestões ou encontrou algum problema:
